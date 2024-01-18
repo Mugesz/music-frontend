@@ -1,0 +1,16 @@
+export const initialState = {
+  user: null,
+  searchTerm: "",
+  filterTerm: "all",
+  allArtist: null,
+  artistFilter: null,
+  languageFilter: null,
+  allUsers: null,
+  allSongs: null,
+  allAlbums: "",
+  albumFilter: null,
+  songIndex: 0,
+  isSongPlaying: true,
+  miniPlayer: false,
+  alertType: null,
+};
