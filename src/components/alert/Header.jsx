@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import logo from "../../assets/img/logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
-import { isActiveStyles, isNotActiveStyles } from "../../utils/styles";
 import { FaCrown } from "react-icons/fa";
 import { useStateValue } from "../../Context/StateProvider";
 import { getAuth } from "firebase/auth";
 import { app } from "../../config/firebase.config";
 import { motion } from "framer-motion";
+import { isActiveStyles, isNotActiveStyles } from "../../utils/styles";
 
 const Header = () => {
   const [{ user }] = useStateValue();
-  const [menu, setMenu] = useState();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate(false);
 
   const logout = () => {
@@ -33,6 +33,7 @@ const Header = () => {
       <NavLink to={"/musics"}>
         <img src={logo} className="w-16" alt="" />
       </NavLink>
+
       <ul className="flex items-center justify-center md:ml-7">
         <li className="mx-3 md:mx-5 text-lg">
           <NavLink
@@ -73,46 +74,29 @@ const Header = () => {
           </NavLink>
         </li>
       </ul>
+     
 
-      <div
-        onMouseEnter={() => setMenu(true)}
-        onMouseLeave={() => setMenu(false)}
-        className="flex items-center ml-auto cursor-pointer gap-2 relative"
-      >
+      <div className="flex items-center ml-auto cursor-pointer relative">
         <img
           src={user?.user?.imageURL}
           className="w-12 h-12 min-w-[44px] object-cover rounded-full shadow-lg"
           alt=""
           referrerPolicy="no-referrer"
+          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         />
-        <div className="flex flex-col">
-          <p className="text-textColor text-lg hover:text-headingColor font-semibold">
-            {user?.user?.name}
-          </p>
-          <p className="flex items-center gap-2 text-xs text-gray-500 font-normal">
-            Premium Member.
-            <FaCrown className="text-sm -ml-1 text-yellow-500" />
-          </p>
-        </div>
-        {menu && (
+        {isDropdownOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
-            className="absolute z-10 p-4 top-12 right-0 w-275 gap-4 bg-card shadow-lg rounded-lg backdrop-blur-sm flex flex-col "
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-full right-0 mt-2 w-48 bg-white border rounded-md overflow-hidden shadow-md"
           >
-            <NavLink>
-              <p className="text-base text-textColor hover:font-semibold duration-150 transition-all ease-in-out">
-                Profile
-              </p>
+            <NavLink to="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+              Profile
             </NavLink>
-
-            <p
-              className="text-base text-textColor hover:font-semibold duration-150 transition-all ease-in-out"
-              onClick={logout}
-            >
+            <button onClick={logout} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">
               Sign out
-            </p>
+            </button>
           </motion.div>
         )}
       </div>

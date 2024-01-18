@@ -1,0 +1,188 @@
+
+  /* Media queries for responsiveness */
+  
+  @media screen and (max-width: 768px) {
+    /* Adjustments for smaller screens */
+  
+    /* Header styles */
+    header {
+      padding: 0.5rem;
+    }
+  
+    /* Navigation links */
+    ul {
+      margin-right: 0;
+    }
+  
+    li {
+      margin: 0.3rem;
+    }
+  
+    /* User dropdown */
+    .motion-div {
+      width: 8rem;
+    }
+  
+    /* Responsive Dashboard Styles */
+  
+    /* Dashboard navigation */
+    .dashboard-nav {
+      margin: 0.5rem 0;
+    }
+  
+    .dashboard-nav a {
+      margin: 0 0.5rem;
+    }
+  
+    /* Dashboard content */
+    .dashboard-content {
+      padding: 0.5rem;
+    }
+  
+    /* Responsive Card Styles */
+  
+    /* Card container */
+    .card-container {
+      gap: 0.5rem;
+    }
+  
+    /* Card styles */
+    .card {
+      flex: 1 0 100%; /* Full width on smaller screens */
+    }
+  }
+  
+  /* Existing styles above... */
+
+/* Additional media queries for responsiveness */
+
+/* Small devices (portrait phones) */
+@media screen and (max-width: 480px) {
+    /* Adjustments for smaller screens */
+    
+    /* Header styles */
+    header {
+      padding: 0.5rem;
+    }
+  
+    /* Navigation links */
+    ul {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-right: 0;
+    }
+  
+    li {
+      margin: 0.3rem;
+    }
+  
+    /* User dropdown */
+    .motion-div {
+      width: 100%;
+      left: 0;
+      right: 0;
+      margin-top: 0.3rem;
+    }
+  
+    /* Responsive Dashboard Styles */
+  
+    /* Dashboard navigation */
+    .dashboard-nav {
+      flex-direction: column;
+      text-align: center;
+      margin: 0.5rem 0;
+    }
+  
+    .dashboard-nav a {
+      margin: 0.5rem 0;
+    }
+  
+    /* Dashboard content */
+    .dashboard-content {
+      padding: 0.5rem;
+    }
+  
+    /* Responsive Card Styles */
+  
+    /* Card container */
+    .card-container {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    /* Card styles */
+    .card {
+      flex: 1 0 100%; /* Full width on smaller screens */
+    }
+  }
+  
+  /* Medium devices (landscape tablets) */
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    /* Adjustments for medium-sized screens */
+  
+    /* Responsive Dashboard Styles */
+  
+    /* Dashboard navigation */
+    .dashboard-nav {
+      margin: 0.5rem 0;
+    }
+  
+    .dashboard-nav a {
+      margin: 0 1rem;
+    }
+  
+    /* Responsive Card Styles */
+  
+    /* Card container */
+    .card-container {
+      gap: 1rem;
+    }
+  }
+  
+  /* Large devices (laptops/desktops) */
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Adjustments for larger screens */
+  
+    /* Responsive Dashboard Styles */
+  
+    /* Dashboard navigation */
+    .dashboard-nav {
+      margin: 1rem 0;
+    }
+  
+    .dashboard-nav a {
+      margin: 0 1rem;
+    }
+  
+    /* Responsive Card Styles */
+  
+    /* Card container */
+    .card-container {
+      gap: 1.5rem;
+    }
+  }
+  
+  /* Extra large devices (large desktops) */
+  @media screen and (min-width: 1025px) {
+    /* Adjustments for extra-large screens */
+  
+    /* Responsive Dashboard Styles */
+  
+    /* Dashboard navigation */
+    .dashboard-nav {
+      margin: 1.5rem 0;
+    }
+  
+    .dashboard-nav a {
+      margin: 0 1.5rem;
+    }
+  
+    /* Responsive Card Styles */
+  
+    /* Card container */
+    .card-container {
+      gap: 2rem;
+    }
+  }
+  
