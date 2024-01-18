@@ -2,9 +2,7 @@
   /* Media queries for responsiveness */
   
   @media screen and (max-width: 768px) {
-    /* Adjustments for smaller screens */
   
-    /* Header styles */
     header {
       padding: 0.5rem;
     }
@@ -23,9 +21,7 @@
       width: 8rem;
     }
   
-    /* Responsive Dashboard Styles */
-  
-    /* Dashboard navigation */
+   
     .dashboard-nav {
       margin: 0.5rem 0;
     }
@@ -52,11 +48,7 @@
     }
   }
   
-  /* Existing styles above... */
-
-/* Additional media queries for responsiveness */
-
-/* Small devices (portrait phones) */
+ 
 @media screen and (max-width: 480px) {
     /* Adjustments for smaller screens */
     
@@ -85,9 +77,7 @@
       margin-top: 0.3rem;
     }
   
-    /* Responsive Dashboard Styles */
-  
-    /* Dashboard navigation */
+ 
     .dashboard-nav {
       flex-direction: column;
       text-align: center;
@@ -119,11 +109,7 @@
   
   /* Medium devices (landscape tablets) */
   @media screen and (min-width: 481px) and (max-width: 768px) {
-    /* Adjustments for medium-sized screens */
-  
-    /* Responsive Dashboard Styles */
-  
-    /* Dashboard navigation */
+   
     .dashboard-nav {
       margin: 0.5rem 0;
     }
@@ -132,32 +118,32 @@
       margin: 0 1rem;
     }
   
-    /* Responsive Card Styles */
+   
   
-    /* Card container */
+   
     .card-container {
       gap: 1rem;
     }
+    .high{
+        margin-top: 120px;
+    }
   }
   
-  /* Large devices (laptops/desktops) */
+ 
   @media screen and (min-width: 769px) and (max-width: 1024px) {
-    /* Adjustments for larger screens */
-  
-    /* Responsive Dashboard Styles */
-  
-    /* Dashboard navigation */
+   
     .dashboard-nav {
       margin: 1rem 0;
+    }
+    .high{
+        margin-top: 20px;
     }
   
     .dashboard-nav a {
       margin: 0 1rem;
     }
   
-    /* Responsive Card Styles */
-  
-    /* Card container */
+   
     .card-container {
       gap: 1.5rem;
     }
@@ -165,24 +151,24 @@
   
   /* Extra large devices (large desktops) */
   @media screen and (min-width: 1025px) {
-    /* Adjustments for extra-large screens */
-  
-    /* Responsive Dashboard Styles */
-  
-    /* Dashboard navigation */
+   
     .dashboard-nav {
       margin: 1.5rem 0;
+    }
+    .high{
+        margin-top: 20px;
     }
   
     .dashboard-nav a {
       margin: 0 1.5rem;
     }
   
-    /* Responsive Card Styles */
-  
-    /* Card container */
+   
     .card-container {
       gap: 2rem;
     }
   }
   
+  .height{
+    margin-top: 50px;
+  }

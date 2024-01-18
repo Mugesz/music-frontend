@@ -12,9 +12,11 @@ import { actionType } from "./Context/reducer";
 import Dashboard from "./components/alert/Dashboard";
 import { motion } from "framer-motion";
 import Musicplayer from "./components/alert/Musicplayer";
-import AllAlbum from "./components/alert/AllAlbum";
 import AllSongs from "./components/alert/AllSongs";
 import AlbumDetails from "./components/alert/AlbumDetails";
+import PaymentUI from "./components/alert/PaymentUI";
+import Premium from "./components/alert/Premium";
+import Contact from "./components/alert/Contact";
 
 function App() {
   const firebaseAuth = getAuth(app);
@@ -105,6 +107,10 @@ function App() {
           <Route path="/dashboard/*" element={<Dashboard />} />
           <Route path="/musics" element={<AllSongs />} />
           <Route path="/dashboard/album/:albumId" element={<AlbumDetails />} />
+          <Route path="/premium" element={<Premium />} />
+        <Route path="/payment" element={<PaymentUI />} />
+        <Route path="/contact" element={<Contact />} />
+
         </Routes>
         {auth && isSongPlaying && (
           <motion.div
