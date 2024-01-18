@@ -39,10 +39,10 @@ const DashboardNewsong = () => {
   const [albumUploadingProgress, setAlbumUploadingProgress] = useState(0);
   const [isAlbumUploading, setIsAlbumUploading] = useState(false);
 
-  const [twitter, setTwitter] = useState("");
-  const [instagram, setInstagram] = useState("");
-  const [artistName, setArtistName] = useState("");
-  const [albumName, setAlbumName] = useState("");
+  // const [twitter, setTwitter] = useState("");
+  // const [instagram, setInstagram] = useState("");
+  // const [artistName, setArtistName] = useState("");
+  // const [albumName, setAlbumName] = useState("");
 
   const [
     {
@@ -104,17 +104,6 @@ const DashboardNewsong = () => {
       setIsArtistUploading(false);
     });
   };
-
-  dispatch({
-    type: actionType.SET_ALERT_TYPE,
-    alertType: "success",
-  });
-  setTimeout(() => {
-    dispatch({
-      type: actionType.SET_ALERT_TYPE,
-      alertType: null,
-    });
-  }, 4000);
 
   // save song
   const saveSong = async () => {
@@ -187,111 +176,111 @@ const DashboardNewsong = () => {
   };
 
   // save artist
-  const saveArtist = () => {
-    try {
-      if (!artistImageCover || !artistName || !twitter || !instagram) {
-        dispatch({
-          type: actionType.SET_ALERT_TYPE,
-          alertType: "danger",
-        });
-        setTimeout(() => {
-          dispatch({
-            type: actionType.SET_ALERT_TYPE,
-            alertType: null,
-          });
-        }, 4000);
-      }
+// const saveArtist = () => {
+//     try {
+//       if (!artistImageCover || !artistName || !twitter || !instagram) {
+//         dispatch({
+//           type: actionType.SET_ALERT_TYPE,
+//           alertType: "danger",
+//         });
+//         setTimeout(() => {
+//           dispatch({
+//             type: actionType.SET_ALERT_TYPE,
+//             alertType: null,
+//           });
+//         }, 4000);
+//       }
 
-      setIsArtistUploading(true);
+//       setIsArtistUploading(true);
 
-      const data = {
-        name: artistName,
-        imageURL: artistImageCover,
-        twitter: twitter,
-        instagram: instagram,
-      };
+//       const data = {
+//         name: artistName,
+//         imageURL: artistImageCover,
+//         twitter: twitter,
+//         instagram: instagram,
+//       };
 
-      saveNewArtist(data).then((res) => {
-        getAllArtist().then((data) => {
-          dispatch({
-            type: actionType.SET_ALL_ALBUMNS,
-            allArtist: data.artist,
-          });
-        });
-      });
+//       saveNewArtist(data).then((res) => {
+//         getAllArtist().then((data) => {
+//           dispatch({
+//             type: actionType.SET_ALL_ALBUMNS,
+//             allArtist: data.artist,
+//           });
+//         });
+//       });
 
-      setIsArtistUploading(false);
-      setArtistImageCover(null);
-      setTwitter("");
-      setInstagram("");
-      setArtistName("");
-      dispatch({
-        type: actionType.SET_ALERT_TYPE,
-        alertType: "success",
-      });
-      setTimeout(() => {
-        dispatch({
-          type: actionType.SET_ALERT_TYPE,
-          alertType: null,
-        });
-      }, 4000);
-    } catch (error) {
+//       setIsArtistUploading(false);
+//       setArtistImageCover(null);
+//       setTwitter("");
+//       setInstagram("");
+//       setArtistName("");
+//       dispatch({
+//         type: actionType.SET_ALERT_TYPE,
+//         alertType: "success",
+//       });
+//       setTimeout(() => {
+//         dispatch({
+//           type: actionType.SET_ALERT_TYPE,
+//           alertType: null,
+//         });
+//       }, 4000);
+//     } catch (error) {
       
-      console.error("Error saving artist:", error.message);
-      alert("Error saving artist. Please check the provided information.");
-    }
-  };
+//       console.error("Error saving artist:", error.message);
+//       alert("Error saving artist. Please check the provided information.");
+//     }
+//   };
 
   // save album
 
-  const saveAlbum = () => {
-    try {
-      if (!albumImageCover || !albumName) {
-        dispatch({
-          type: actionType.SET_ALERT_TYPE,
-          alertType: "danger",
-        });
-        setTimeout(() => {
-          dispatch({
-            type: actionType.SET_ALERT_TYPE,
-            alertType: null,
-          });
-        }, 4000);
-      }
+  // const saveAlbum = () => {
+  //   try {
+  //     if (!albumImageCover || !albumName) {
+  //       dispatch({
+  //         type: actionType.SET_ALERT_TYPE,
+  //         alertType: "danger",
+  //       });
+  //       setTimeout(() => {
+  //         dispatch({
+  //           type: actionType.SET_ALERT_TYPE,
+  //           alertType: null,
+  //         });
+  //       }, 4000);
+  //     }
 
-      setIsAlbumUploading(true);
+  //     setIsAlbumUploading(true);
 
-      const data = {
-        name: albumName,
-        imageURL: albumImageCover,
-      };
+  //     const data = {
+  //       name: albumName,
+  //       imageURL: albumImageCover,
+  //     };
 
-      saveNewAlbum(data).then(() => {
-        getAllAlbums().then((data) => {
-          dispatch({
-            type: actionType.SET_ALL_ALBUMNS,
-            allAlbums: data.allAlbums,
-          });
-        });
-      });
-      setIsAlbumUploading(false);
-      setAlbumImageCover(null);
-      setAlbumName("");
-      dispatch({
-        type: actionType.SET_ALERT_TYPE,
-        alertType: "success",
-      });
-      setTimeout(() => {
-        dispatch({
-          type: actionType.SET_ALERT_TYPE,
-          alertType: null,
-        });
-      }, 4000);
-    } catch (error) {
-      console.error("Error saving artist:", error.message);
-      alert("Error saving artist. Please check the provided information.");
-    }
-  };
+  //     saveNewAlbum(data).then(() => {
+  //       getAllAlbums().then((data) => {
+  //         dispatch({
+  //           type: actionType.SET_ALL_ALBUMNS,
+  //           allAlbums: data.allAlbums,
+  //         });
+  //       });
+  //     });
+  //     setIsAlbumUploading(false);
+  //     setAlbumImageCover(null);
+  //     setAlbumName("");
+  //     dispatch({
+  //       type: actionType.SET_ALERT_TYPE,
+  //       alertType: "success",
+  //     });
+  //     setTimeout(() => {
+  //       dispatch({
+  //         type: actionType.SET_ALERT_TYPE,
+  //         alertType: null,
+  //       });
+  //     }, 4000);
+  //   } catch (error) {
+  //     console.error("Error saving artist:", error.message);
+  //     alert("Error saving artist. Please check the provided information.");
+  //   }
+  // };
 
   // return statement
 
@@ -349,7 +338,7 @@ const DashboardNewsong = () => {
           <p className=" text-xl font-semibold text-headingColor">
             Artist details
           </p>
-          <ArtistUpload
+          {/* <ArtistUpload
             artistImageCover={artistImageCover}
             setArtistImageCover={setArtistImageCover}
             artistUploadingProgress={artistUploadingProgress}
@@ -357,11 +346,11 @@ const DashboardNewsong = () => {
             isArtistUploading={isArtistUploading}
             setIsArtistUploading={setIsArtistUploading}
             deleteImageObject={deleteImageObject}
-          />
+          /> */}
 
           {/* artist name */}
 
-          <div className="flex flex-col items-center justify-center gap-4 ">
+          {/* <div className="flex flex-col items-center justify-center gap-4 ">
             <input
               type="text"
               placeholder="Artist Name"
@@ -443,7 +432,7 @@ const DashboardNewsong = () => {
                 </motion.button>
               )}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
