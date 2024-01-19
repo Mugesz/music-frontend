@@ -107,12 +107,12 @@ const Header = () => {
                 Profile
               </p>
             </NavLink>
-            <button
+            <p
               className="text-base text-textColor hover:font-semibold duration-150 transition-all ease-in-out"
               onClick={logout}
             >
               Sign out
-            </button>
+            </p>
           </motion.div>
         )}
       </div>
