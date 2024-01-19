@@ -1,3 +1,10 @@
+# This React App was created by Mugesh kanna
+
+<img src="https://media.licdn.com/dms/image/C5603AQGhdTY-DStghw/profile-displayphoto-shrink_800_800/0/1661183602257?e=2147483647&v=beta&t=DSsh7Bn0u2vg40_yOz2wsTxo2zPZf3hVSqFkFw9DaHo" />
+
+lot of efforts had been used in thes website creating music player is not easy for without having work expirience 
+I try lot ad I should give my best
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
