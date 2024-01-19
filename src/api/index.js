@@ -115,3 +115,4 @@ export const deleteArtistById = async (id) => {
     return null;
   }
 };
+

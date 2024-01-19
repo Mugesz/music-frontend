@@ -27,7 +27,7 @@ const SongCard = ({ data, index, type }) => {
       animate={{ opacity: 1, translateX: 0 }}
       transition={{ duration: 0.3, delay: index * 0.1 }}
       onClick={type === "song" && addToContext}
-      className="relative w-40 min-w-210 px-2 py-4 cursor-pointer hover:shadow-xl hover:bg-card bg-gray-100 shadow-md rounded-lg flex flex-col items-center"
+      className="app-container relative w-40 min-w-210 px-2 py-4 cursor-pointer hover:shadow-xl hover:bg-card bg-gray-100 shadow-md rounded-lg flex flex-col items-center"
     >
       <div className="w-40 min-w-[160px] h-40 min-h-[160px] rounded-lg drop-shadow-lg relative overflow-hidden">
         <motion.img
