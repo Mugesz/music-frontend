@@ -107,8 +107,7 @@ const Header = () => {
                 Profile
               </p>
             </NavLink>
-
-            <p
+            <button
               className="text-base text-textColor hover:font-semibold duration-150 transition-all ease-in-out"
               onClick={logout}
             >
