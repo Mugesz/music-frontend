@@ -16,31 +16,41 @@ const MusicPlayer = () => {
   const [{ allSongs, songIndex, isSongPlaying, miniPlayer }, dispatch] =
     useStateValue();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        if (!allSongs) {
-          const songsData = await getAllSongs();
-          dispatch({
-            type: actionType.SET_ALL_SONGS,
-            allSongs: songsData,
-          });
-          console.log("Songs:", songsData?.data);
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          if (!allSongs) {
+            const songsData = await getAllSongs();
+            dispatch({
+              type: actionType.SET_ALL_SONGS,
+              allSongs: songsData,
+            });
+            console.log("Songs:", songsData?.data);
+          }
+    
+          if (!isSongPlaying && songIndex !== null) {
+            // Check if the user has clicked on a song
+            if (miniPlayer) {
+              // If miniPlayer is active, set isSongPlaying to false
+              dispatch({
+                type: actionType.SET_SONG_PLAYING,
+                isSongPlaying: false,
+              });
+            } else {
+              // If miniPlayer is not active, set isSongPlaying to true
+              dispatch({
+                type: actionType.SET_SONG_PLAYING,
+                isSongPlaying: true,
+              });
+            }
+          }
+        } catch (error) {
+          console.error("Error fetching data:", error);
         }
-
-        if (!isSongPlaying && songIndex !== null) {
-          dispatch({
-            type: actionType.SET_SONG_PLAYING,
-            isSongPlaying: true,
-          });
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, [allSongs, songIndex, isSongPlaying, dispatch]);
+      };
+    
+      fetchData();
+    }, [allSongs, songIndex, isSongPlaying, miniPlayer, dispatch]);
 
   const closeMusicPlayer = () => {
     if (isSongPlaying) {
