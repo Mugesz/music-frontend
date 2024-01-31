@@ -7,9 +7,6 @@ import Header from "./Header";
 
 const AllSongs = () => {
   const [{ allSongs }, dispatch] = useStateValue();
-
-  console.log("allSongs",allSongs)
-
   const fetchData = async () => {
     if (!allSongs) {
       const songsData = await getAllSongs();
@@ -17,7 +14,7 @@ const AllSongs = () => {
         type: actionType.SET_ALL_SONGS,
         allSongs: songsData,
       });
-      console.log("Songs:", songsData?.data);
+
     }
   };
 

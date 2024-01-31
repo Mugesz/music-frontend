@@ -28,7 +28,7 @@ export const DashboardCard = ({ icon, name, count }) => {
 const DashboardHome = () => {
   const [{ allUsers, allSongs, allArtist, allAlbums }, dispatch] =
     useStateValue();
-    console.log(allSongs)
+ 
 
     useEffect(() => {
       const fetchData = async () => {

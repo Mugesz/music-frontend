@@ -18,7 +18,6 @@ export const validateUser = async (token) => {
 export const getAllArtist = async () => {
   try {
     const res = await axios.get(`${baseURL}api/artists/getAll`);
-    console.log("API Response:", res.data);
     return res.data;
   } catch (error) {
     return null;
@@ -38,7 +37,7 @@ export const getAllUsers = async () => {
 export const getAllSongs = async () => {
   try {
     const res = await axios.get(`${baseURL}api/songs/getAll`);
-    // console.log("get all songs:",res.data.songs)
+    
     return res.data.songs; 
   
   } catch (error) {
@@ -63,9 +62,6 @@ export const saveNewSong = async (data) => {
     const res = await axios.post(`${baseURL}api/songs/save`, { ...data });
     return res.data.saveSong;
   } catch (error) {
-    console.error("Error saving song:", error);
-    console.log("Request payload:", data);
-    console.log("Error response:", error.response);
     throw error; // Rethrow the error to handle it at the calling site
   }
 };
