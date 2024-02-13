@@ -36,7 +36,7 @@ function App() {
             type: actionType.SET_ALL_USERS,
             allUsers: userData?.data,
           });
-          console.log("Users:", userData?.data);
+
         }
   
         if (!allSongs) {
@@ -54,7 +54,7 @@ function App() {
             type: actionType.SET_ALL_ARTIST,
             allArtist: artistData?.data,
           });
-          console.log("Artists:", artistData?.data);
+          
         }
   
         if (!allAlbums) {
