@@ -14,7 +14,6 @@ const ImageUploader = ({ updatedState, setProgress, isLoading, isImage }) => {
       ? "images"
       : "audio";
     const storagePath = `${fileType}/${Date.now()}-${uploadedFile.name}`;
-
     const storageRef = ref(storage, storagePath);
     const uploadTask = uploadBytesResumable(storageRef, uploadedFile);
 
