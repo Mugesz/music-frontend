@@ -17,7 +17,7 @@ const AllSongs = () => {
 
     }
   };
-
+  
 
   useEffect(() => {
     fetchData();

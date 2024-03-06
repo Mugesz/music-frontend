@@ -5,6 +5,7 @@ import { actionType } from "../../Context/reducer";
 
 const SongCard = ({ data, index, type }) => {
   const [{ songIndex, isSongPlaying }, dispatch] = useStateValue();
+  
   const addToContext = () => {
     if (!isSongPlaying) {
       dispatch({
@@ -20,6 +21,16 @@ const SongCard = ({ data, index, type }) => {
       });
     }
   };
+
+  if (!data) {
+    // If there's no song data, render "Loading..."
+    return (
+      <div className="app-container w-40 min-w-210 px-2 py-4">
+        Loading...
+      </div>
+    );
+  }
+
   return (
     <motion.div
       whileTap={{ scale: 0.8 }}

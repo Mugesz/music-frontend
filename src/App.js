@@ -75,28 +75,31 @@ function App() {
   }, []);
 
   useEffect(() => {
-    firebaseAuth.onAuthStateChanged((userCred) => {
-      if (userCred) {
-        userCred.getIdToken().then((token) => {
+    try {
+      firebaseAuth.onAuthStateChanged(async (userCred) => {
+        if (userCred) {
+          const token = await userCred.getIdToken();
           window.localStorage.setItem("auth", "true");
-          validateUser(token).then((data) => {
-            dispatch({
-              type: actionType.SET_USER,
-              user: data,
-            });
+          const data = await validateUser(token);
+          dispatch({
+            type: actionType.SET_USER,
+            user: data,
           });
-        });
-      } else {
-        setAuth(false);
-        window.localStorage.setItem("auth", "false");
-        dispatch({
-          type: actionType.SET_USER,
-          user: null,
-        });
-        navigate("/login");
-      }
-    });
+        } else {
+          setAuth(false);
+          window.localStorage.setItem("auth", "false");
+          dispatch({
+            type: actionType.SET_USER,
+            user: null,
+          });
+          navigate("/login");
+        }
+      });
+    } catch (error) {
+      console.error("Error in onAuthStateChanged:", error);
+    }
   }, []);
+  
 
   return (
     <AnimatePresence mode="wait">
